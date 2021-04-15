@@ -4,7 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-	<style type="text/css"> * {box-sizing:border-box;}html{height:100%;font-family:sans-serif;}body{margin:0;font-size:100%;color:#222;height:100%;text-align:center;}header{position:absolute;top:64px;width:100%;background:transparent;}hr{width:40px;display:block;margin:24px auto 40px;border:2px solid #FFF;}h1,h2,h3,h4{line-height:1.8;margin:0 0 16px;}h1,h2,h3{width:calc(100% - 16px);align-self:stretch;}h1{font-size:4em;font-weight:700;text-transform:uppercase;}h2{font-size:1.6em;font-weight:normal;letter-spacing:.02em;margin:0}h3{font-size:1.8em;text-transform:uppercase;}h4{font-size:1.3em;text-transform:uppercase;}span{margin: 0 0 16px;font-size:1.6em;font-weight:700;display:block;opacity:.32;}p{font-size:1.3em;line-height:1.8;margin:0 0 16px;}main,section,footer{display:flex;flex-direction:column;flex-wrap:nowrap;justify-content:space-around;align-content:center;align-items:center;padding:48px 0;margin:0;}footer{background-color:#000;text-align:center;color:#999}.hero{justify-content:center;background: url("img/mainbg.svg")no-repeat center;background-size:cover;min-height:100vh;padding:160px 0 32px;margin:0;color:#FFF;}.flex-wrap{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:space-around;align-content:center;align-items:center;width:100%;max-width:1280px;padding:0 8px;margin:-16px -16px;}.box-100,.inner-100{width:calc(100% - 16px);}.box-25,.inner-25{width:calc(25% - 16px);}.inner-100,.inner-50,.inner-30,.inner-25{align-self:stretch;}.box-50-elevated-card{width:calc(50% - 16px);background:#FFF;box-shadow:0 16px 32px -16px rgba(0,0,0,0.24);padding:0 0 24px 0;margin:8px;align-self:stretch;text-align:center;}.box-50-elevated-card img{width:100%;height:auto;vertical-align:middle;}.card-content{align-self:flex-start;width:100%;padding:16px 16px 0 16px;}.card-content,.box-50-elevated-card a:link,.box-50-elevated-card a:visited{color:#222;text-decoration:none;}@media not screen and (max-width: 800px){a:hover{transition:all .3s;}.hero-links a:hover{opacity:.64;}.card-content:hover{color:#06F;transition:all .3s;}.box-50-elevated-card:hover{box-shadow:0 16px 32px -16px rgba(0,0,0,0.72);}}@media(max-width:1024px){h1{font-size:3.6em;}.card-25{width:calc(33.333% - 16px);margin:8px;align-self:stretch;}}@media(max-width:768px){h1{font-size:3.2em;}.flex-wrap{width:96%;}.card-25,.box-25,.inner-25,.box-50-elevated-card{width:calc(100% - 16px);}}@media(max-width:480px){h1{font-size:1.6em;}.subtitle{font-size:.8em;}}</style>      
+	<style type="text/css"> * {box-sizing:border-box;}html{height:100%;font-family:sans-serif;}body{margin:0;font-size:100%;color:#222;height:100%;text-align:center;}header{position:absolute;top:64px;width:100%;background:transparent;}hr{width:40px;display:block;margin:24px auto 40px;border:2px solid #FFF;}h1,h2,h3,h4{line-height:1.8;margin:0 0 16px;}h1,h2,h3{width:calc(100% - 16px);align-self:stretch;}h1{font-size:4em;font-weight:700;text-transform:uppercase;}h2{font-size:1.6em;font-weight:normal;letter-spacing:.02em;margin:0}h3{font-size:1.8em;text-transform:uppercase;}h4{font-size:1.3em;text-transform:uppercase;}span{margin: 0 0 16px;font-size:1.6em;font-weight:700;display:block;opacity:.32;}p{font-size:1.3em;line-height:1.8;margin:0 0 16px;}a:link,a:visited {color: #222;text-decoration: none;}main,section,footer{display:flex;flex-direction:column;flex-wrap:nowrap;justify-content:space-around;align-content:center;align-items:center;padding:48px 0;margin:0;}footer{background-color:#000;text-align:center;color:#999}.hero{justify-content:center;background: url("img/mainbg.svg")no-repeat center;background-size:cover;min-height:100vh;padding:160px 0 32px;margin:0;color:#FFF;}.flex-wrap{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:space-around;align-content:center;align-items:center;width:100%;max-width:1280px;padding:0 8px;margin:-16px -16px;}.box-100,.inner-100{width:calc(100% - 16px);}.box-25,.inner-25{width:calc(25% - 16px);}.inner-100,.inner-50{align-self:stretch;}.box-50-elevated-card{width:calc(50% - 16px);background:#FFF;box-shadow:0 16px 32px -16px rgba(0,0,0,0.24);padding:0 0 24px 0;margin:8px;align-self:stretch;text-align:center;}.box-50-elevated-card img{width: 100%; aspect-ratio: 4 / 3; vertical-align:middle;}.card-content{align-self:flex-start;width:100%;padding:16px 16px 0 16px;}
+@media not screen and (max-width: 800px){a:hover{color:#06F;transition:all .3s;}}
+@media(max-width:1024px){h1{font-size:3.6em;}}
+@media(max-width:768px){h1{font-size:3.2em;}.flex-wrap{width:96%;}.box-50-elevated-card{width:calc(100% - 16px);}}@media(max-width:480px){h1{font-size:1.6em;}.subtitle{font-size:.8em;}}</style>      
         <title data-vue-meta="true">Mobikdev PWA</title>
         <meta name="description" content="Hight performance PWA">
         <link rel="manifest" href="manifest.json" crossorigin="use-credentials">
@@ -30,8 +33,7 @@
         <main>
             <div class="flex-wrap">
                 <h3>Latest works</h3>
-                <div class="box-50-elevated-card">
-                    <a href="https://demopagerocket.github.io/">
+                    <a class="box-50-elevated-card" href="https://demopagerocket.github.io/">
                         <picture>
                             <source media="(max-width: 375px)" srcset="img/05_352x264.webp" type="image/webp">
                             <source media="(max-width: 600px)" srcset="img/05_416x312.webp" type="image/webp">
@@ -44,9 +46,7 @@
                             <p>PWA ready html/css boilerplate</p>
                         </div>
                     </a>
-                </div>
-                <div class="box-50-elevated-card">
-                    <a href="https://www.behance.net/gallery/89192735/Coupler-Business-Web" rel="noopener">
+                    <a class="box-50-elevated-card" href="https://www.behance.net/gallery/89192735/Coupler-Business-Web" rel="noopener">
                         <picture>
                             <source media="(max-width: 375px)" srcset="img/01_352x264.webp" type="image/webp">
                             <source media="(max-width: 600px)" srcset="img/01_416x312.webp" type="image/webp">
@@ -59,9 +59,7 @@
                             <p>Business management app</p>
                         </div>
                     </a>
-                </div>
-                <div class="box-50-elevated-card">
-                    <a href="https://dribbble.com/shots/7887127-Coupler-connect-marketplace-of-services-IOS-app-night-mode">
+                    <a class="box-50-elevated-card" href="https://dribbble.com/shots/7887127-Coupler-connect-marketplace-of-services-IOS-app-night-mode">
                         <picture>
                             <source media="(max-width: 375px)" srcset="img/02_352x264.webp" type="image/webp">
                             <source media="(max-width: 600px)" srcset="img/02_416x312.webp" type="image/webp">
@@ -74,9 +72,7 @@
                             <p>Marketplace IOS mobile app</p>
                         </div>
                     </a>
-                </div>
-                <div class="box-50-elevated-card">
-                    <a href="https://dribbble.com/shots/10757983-Landing-page-for-HACKATHONHUB">
+                    <a class="box-50-elevated-card" href="https://dribbble.com/shots/10757983-Landing-page-for-HACKATHONHUB">
                         <picture>
                             <source media="(max-width: 375px)" srcset="img/03_352x264.webp" type="image/webp">
                             <source media="(max-width: 600px)" srcset="img/03_416x312.webp" type="image/webp">
@@ -89,9 +85,7 @@
                             <p>Hub landing page</p>
                         </div>
                     </a>
-                </div>
-                <div class="box-50-elevated-card">
-                    <a href="https://dribbble.com/shots/7885848-Coupler-client-IOS-app-part-II">
+                    <a class="box-50-elevated-card" href="https://dribbble.com/shots/7885848-Coupler-client-IOS-app-part-II">
                         <picture>
                             <source media="(max-width: 375px)" srcset="img/04_352x264.webp" type="image/webp">
                             <source media="(max-width: 600px)" srcset="img/04_416x312.webp" type="image/webp">
@@ -104,9 +98,7 @@
                             <p>Service search mobile app</p>
                         </div>
                     </a>
-                </div>
-                <div class="box-50-elevated-card">
-                    <a href="https://www.behance.net/gallery/57911823/Card-2-card-money-transfer-Part-of-new-fintech-project">
+                    <a class="box-50-elevated-card" href="https://www.behance.net/gallery/57911823/Card-2-card-money-transfer-Part-of-new-fintech-project">
                         <picture>
                             <source media="(max-width: 375px)" srcset="img/06_352x264.webp" type="image/webp">
                             <source media="(max-width: 600px)" srcset="img/06_416x312.webp" type="image/webp">
@@ -119,7 +111,6 @@
                             <p>Money transfer card 2 card</p>
                         </div>
                     </a>
-                </div>
             </div>
         </main>
         <footer><p class="inner-100"><small>© 2021 Rocketpage</small></p></footer>
