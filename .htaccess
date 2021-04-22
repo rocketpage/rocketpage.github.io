@@ -1,0 +1,8 @@
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www.mobikdev.com$ [NC]
+RewriteRule ^(.*)$ http://mobikdev.com/awstats/$1 [R=301,L]
+
+RewriteEngine On 
+RewriteCond %{HTTP_HOST} ^www\.yourdomain\.ru$ [NC] 
+RewriteRule ^baza-znanij/nastrojka-301-redirekta/$ http://www.yourdomain.ru/newpage/ [R=301,L]
