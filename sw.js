@@ -1,11 +1,11 @@
 self.oninstall = event => {
   self.skipWaiting();
 
-  const toCache = Array(300).fill('').map((v, i) => `images/${i}.webp`);
+  const toCache = Array(300).fill('').map((v, i) => `img/${i}.webp`);
   toCache.push('./');
 
   event.waitUntil(
-    caches.open('img-images').then(cache => cache.addAll(toCache))
+    caches.open('img').then(cache => cache.addAll(toCache))
   );
 };
 
