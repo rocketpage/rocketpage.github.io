@@ -1,1 +1,68 @@
-const CACHE_VERSION=1,CURRENT_CACHE="main-1",cacheFiles=["/","/img/","/icons/"];self.addEventListener("activate",e=>e.waitUntil(caches.keys().then(e=>Promise.all(e.map(e=>{if("main-1"!==e)return caches.delete(e)}))))),self.addEventListener("install",e=>e.waitUntil(caches.open("main-1").then(e=>e.addAll(cacheFiles))));const fromNetwork=(e,t)=>new Promise((a,n)=>{const c=setTimeout(n,t);fetch(e).then(t=>{clearTimeout(c),a(t),update(e)},n)}),fromCache=e=>caches.open("main-1").then(t=>t.match(e).then(e=>e||t.match("/offline/"))),update=e=>caches.open("main-1").then(t=>fetch(e).then(a=>t.put(e,a)));self.addEventListener("fetch",e=>{e.respondWith(fromNetwork(e.request,1e4).catch(()=>fromCache(e.request))),e.waitUntil(update(e.request))});
+// the cache version gets updated every time there is a new deployment
+const CACHE_VERSION = 10;
+const CURRENT_CACHE = `main-${CACHE_VERSION}`;
+
+// these are the routes we are going to cache for offline support
+const cacheFiles = ['/', 'img/', 'icons/'];
+
+// on activation we clean up the previously registered service workers
+self.addEventListener('activate', evt =>
+  evt.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames.map(cacheName => {
+          if (cacheName !== CURRENT_CACHE) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    })
+  )
+);
+
+// on install we download the routes we want to cache for offline
+self.addEventListener('install', evt =>
+  evt.waitUntil(
+    caches.open(CURRENT_CACHE).then(cache => {
+      return cache.addAll(cacheFiles);
+    })
+  )
+);
+
+// fetch the resource from the network
+const fromNetwork = (request, timeout) =>
+  new Promise((fulfill, reject) => {
+    const timeoutId = setTimeout(reject, timeout);
+    fetch(request).then(response => {
+      clearTimeout(timeoutId);
+      fulfill(response);
+      update(request);
+    }, reject);
+  });
+
+// fetch the resource from the browser cache
+const fromCache = request =>
+  caches
+    .open(CURRENT_CACHE)
+    .then(cache =>
+      cache
+        .match(request)
+        .then(matching => matching || cache.match('/'))
+    );
+
+// cache the current page to make it available for offline
+const update = request =>
+  caches
+    .open(CURRENT_CACHE)
+    .then(cache =>
+      fetch(request).then(response => cache.put(request, response))
+    );
+
+// general strategy when making a request (eg if online try to fetch it
+// from the network with a timeout, if something fails serve from cache)
+self.addEventListener('fetch', evt => {
+  evt.respondWith(
+    fromNetwork(evt.request, 10000).catch(() => fromCache(evt.request))
+  );
+  evt.waitUntil(update(evt.request));
+});
