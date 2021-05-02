@@ -83,6 +83,6 @@
 			</div>
 		</main>
 	<footer><p><small>© 2021 Mobikdev</small></p></footer>
-	<script>if ("serviceWorker" in navigator) {navigator.serviceWorker.register("sw.js", {updateViaCache: "none",});}</script>
+	<script>if ("serviceWorker" in navigator) { window.addEventListener("load", function() { navigator.serviceWorker.register("sw.js"); }); }</script>
 	</body>
 </html>
