@@ -74,6 +74,6 @@
 			</div>
 		</main>
 	<footer><p class="inner-100"><small>© 2021 Mobikdev</small></p></footer>
-	<script>if ("serviceWorker" in navigator) { window.addEventListener("load", async () => { try { const reg = await navigator.serviceWorker.register("sw.js"); console.log("Service worker registered!", reg); } catch (err) { console.log("Service worker registration failed: ", err); } }); }</script>
+	<script>if ("serviceWorker" in navigator) {navigator.serviceWorker.register("sw.js", {updateViaCache: "none",});}</script>
 	</body>
 </html>
