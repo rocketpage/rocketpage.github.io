@@ -74,6 +74,6 @@
 			</div>
 		</main>
 	<footer><p class="inner-100"><small>© 2021 Mobikdev</small></p></footer>
-<script>navigator.serviceWorker.register("sw.js")</script>
+<script>if ("serviceWorker" in navigator) {navigator.serviceWorker.register("sw.js", {updateViaCache: "none",});}</script>
 	</body>
 </html>
